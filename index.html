@@ -2,13 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Memory Game!</title>
+    <title>My Memory Game!</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Memory Game!</h1>
-    <div id="game">
+    <div class="header">
+      <h1>Memory Game!</h1>
+      <p>Try to match all the colors in the fewest attempts as possible</p>
+      <p>
+        <span> Directions:</span> Select the number of colors you want to match
+        (min. 2) up to 10 colors. Then press play.
+      </p>
     </div>
+    <div class="top-nav">
+      <label class="color-count" for="colorNoInput">
+        Select # of colors:
+        <input
+          class="color-count"
+          type="number"
+          name="colorNoInput"
+          id="colorNoInput"
+          min="2"
+          max="10"
+          step="1"
+          value="4"
+        />
+      </label>
+      <button id="start" class="btn active">Play</button>
+      <button id="reset" class="btn disabled">Reset</button>
+    </div>
+    <div class="left-column">
+      <div class="score-card">
+        <h2>Scoreboard</h2>
+        <p>Elapsed Time</p>
+        <label id="seconds">0</label>
+        <span>Current Score </span><label id="current-score">0</label>
+        <span>Lowest Score </span><label id="lowest-score"></label>
+      </div>
+    </div>
+    <div class="right-column">
+      <div id="game"></div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

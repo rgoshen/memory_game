@@ -1,7 +1,184 @@
-#game div {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  height: 100vh;
+  background-color: seashell;
+}
+
+.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.active {
+  cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/* Header */
+.header {
+  padding: 2.5rem;
+  text-align: center;
+  color: darkblue;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.header span {
+  font-weight: 900;
+}
+
+/* Navigation */
+.top-nav {
+  text-align: center;
+  background-color: peru;
+  width: 98.5%;
+  height: 3rem;
+  padding: 6px;
+  margin: auto;
+  border-radius: 5px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.color-count {
+  font-size: 1.5rem;
+  margin: auto 0.625rem;
+  color: darkblue;
+  text-align: center;
+}
+
+label {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.score-card span {
+  font-size: 1.5rem;
+}
+
+.btn {
+  background-color: linen;
+  color: darkblue;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem 2rem;
+  width: 7rem;
+  border: none;
+  border-radius: 0.3rem;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background-color: brown;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/* Right Column */
+.right-column {
+  float: right;
+  width: 75%;
+}
+
+/* Left Column */
+.left-column {
+  float: left;
+  width: 25%;
+}
+
+/* Score Card */
+.score-card {
+  background-color: antiquewhite;
+  color: darkblue;
+  padding: 0.625rem;
+  margin: auto;
+  margin-top: 0.75rem;
+  border-radius: 5px;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
+}
+
+.score-card:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.score-card h2 {
+  font-size: 2rem;
+}
+
+.score-card p {
+  font-size: 1.5rem;
+}
+
+/* Game Board */
+#game {
+  width: 98%;
+  height: 900px;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  margin-top: 0.75rem;
+  perspective: 1000px;
+}
+
+#game:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.memory-card {
   border: 1px solid black;
+  background-color: lightskyblue;
+  border-radius: 10px;
   width: 15%;
   height: 200px;
   margin: 10px;
-  display: inline-block;
+  position: relative;
+  transform-style: preserve-3d;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  transform: scale(1);
+  transition: 0.5s;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.memory-card:hover {
+  box-shadow: 5px 10px 18px #888888;
+}
+
+.memory-card.flipped {
+  transform: rotateY(180deg);
 }
