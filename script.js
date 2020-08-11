@@ -1,11 +1,8 @@
 // TODO:1. research how to limit random color generator
-// TODO:2. Change once play starts disable the play button and enable reset button
-// TODO:3. Look into making the game board more responsive instead of hard coding it to 900px
-// TODO: 4. remove hover affect from scoreboard and game board
 
 const gameContainer = document.getElementById("game");
 const colorInput = document.getElementById("colorNoInput");
-const startButton = document.getElementById("start");
+const playButton = document.getElementById("start");
 const resetButton = document.getElementById("reset");
 const secondsLabel = document.getElementById("seconds");
 const currentScore = document.getElementById("current-score");
@@ -24,7 +21,7 @@ let totalClicks = 0;
 lowestScore.innerHTML = lowestScores[0];
 
 // EVENT HANDLERS
-startButton.addEventListener("click", function (e) {
+playButton.addEventListener("click", function (e) {
   e.preventDefault();
   let noOfColors = colorInput.value;
 
@@ -34,10 +31,16 @@ startButton.addEventListener("click", function (e) {
     colors.push(addColor);
   }
   let shuffledColors = shuffle(colors);
+  gameContainer.classList.remove("hidden");
   createDivsForColors(shuffledColors);
   gameTimer = setInterval(function () {
     secondsLabel.innerHTML = totalSeconds++;
   }, 1000);
+  playButton.classList.add("disabled");
+  playButton.classList.remove("active");
+  resetButton.classList.remove("disabled");
+  resetButton.classList.add("active");
+  allowReset = true;
 });
 
 resetButton.addEventListener("click", function () {
@@ -52,7 +55,11 @@ resetButton.addEventListener("click", function () {
     while (gameContainer.firstChild) {
       gameContainer.removeChild(gameContainer.firstChild);
       resetButton.classList.add("disabled");
+      resetButton.classList.remove("active");
+      playButton.classList.remove("disabled");
+      playButton.classList.add("active");
     }
+    gameContainer.classList.add("hidden");
     document.location.reload(true);
   }
 });

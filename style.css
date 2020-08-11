@@ -120,11 +120,7 @@ label {
   display: flex;
   flex-direction: column;
   line-height: 2rem;
-}
-
-.score-card:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.24);
 }
 
 .score-card h2 {
@@ -138,7 +134,6 @@ label {
 /* Game Board */
 #game {
   width: 98%;
-  height: 900px;
   background-color: antiquewhite;
   border-radius: 5px;
   padding: 15px;
@@ -149,11 +144,7 @@ label {
   margin: auto;
   margin-top: 0.75rem;
   perspective: 1000px;
-}
-
-#game:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.24);
 }
 
 .memory-card {
