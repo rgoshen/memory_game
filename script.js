@@ -1,3 +1,7 @@
+// TODO:1. research how to limit random color generator
+// TODO:2. Change once play starts disable the play button and enable reset button
+// TODO:3. Look into making the game board more responsive instead of hard coding it to 900px  
+
 const gameContainer = document.getElementById("game");
 const colorInput = document.getElementById("colorNoInput");
 const startButton = document.getElementById("start");
